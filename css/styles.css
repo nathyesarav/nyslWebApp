@@ -1,0 +1,231 @@
+
+.striped tr:nth-child(odd){
+  background-color: #55aa55;
+}
+
+.striped tr:nth-child(even){
+  background-color: white;
+}
+
+.card-bg{
+  background-image: url(Images/football_background.png);
+  background-size: cover;
+}
+
+/*
+==========================================
+Header
+==========================================
+*/
+
+header{
+  background-color: #c2d8c2;
+}
+
+.non-active-bkg{
+  background-color: #88cc88;
+  color: black;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+  background-color: #004400;
+  color: white;
+}
+
+#active-bkg, .title{
+  color: white;
+  background-color: #004400;
+  border-color: #004400;
+}
+
+
+
+/*
+==========================================
+Main
+==========================================
+*/
+
+.bkg{
+  background-image: url(Images/background.png);
+  background-size: cover;
+  height: 120vh;
+}
+
+/*
+==========================================
+Home
+==========================================
+*/
+
+.card-bkg{
+  background-color: #116611;
+}
+
+/*
+==========================================
+Schedule
+==========================================
+*/
+#schSlide > div {
+display: none;
+}
+
+#schSlide > div.current {
+display: block;
+}
+.t-headers{
+  background-color: #116611;
+}
+
+
+.loc-map{
+  display: none;
+}
+.game-detail{
+  display: none;
+}
+.detail-table{
+  font-size: 150%;
+}
+#forum{
+  display: none;
+}
+
+.forum-header, .forum-body{
+  width: 99%;
+}
+
+.forum-body{
+  background-color: white;
+}
+
+.forum-header{
+  font-size: 90%;
+}
+
+.non-act a{
+  color: black;
+}
+
+.is-active a{
+  background-color: #297756;
+  color: white;
+}
+
+.mdl-card__title{
+  background-color: #5cb85c;
+}
+.star-count{
+  display: inline-block;
+}
+.forum-bg{
+  background-color: #88cc88;
+}
+.header .username{
+  font-weight: bold;
+}
+.comments-container::before{
+  content: "Comments:";
+  margin-top: 1.5%;
+  font-weight: bold;
+  display: block;
+}
+.mdl-textfield__label{
+  display: none;
+}
+.comment{
+  margin-left: 1%;
+}
+.username::after{
+  content: ":";
+}
+.add-comment{
+  margin: 2% 0;
+}
+
+/*
+==========================================
+Locations
+==========================================
+*/
+
+.map{
+  height: 75vh;
+}
+
+/*
+==========================================
+Landscape
+==========================================
+*/
+
+.show-landscp{
+  display: none;
+}
+
+@media only screen and (orientation:landscape){
+  .hide-landscp{
+    display: none;
+  }
+  .show-landscp{
+    display: inline-block;
+    float: left;
+    width: 18%;
+  }
+  .ul-landscp{
+    padding-top: 3.5%;
+    padding-left: 2%;
+    font-size: 70%;
+  }
+  .bkg{
+    background-image: url(Images/banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  #link-home:after{
+    content: " Home";
+  }
+  #link-schedule:after{
+    content: " Schedule";
+  }
+  #link-locations:after{
+    content: " Locations";
+  }
+  #link-stats:after{
+    content: " Stats";
+  }
+}
+
+/*
+==========================================
+Transitions
+==========================================
+*/
+
+
+/*
+
+@-webkit-keyframes outToLeft {
+from { -webkit-transform: translateX(0); }
+to { -webkit-transform: translateX(-100%); }
+}
+.push.out {
+-webkit-animation-name: outToLeft;
+}
+
+
+@-webkit-keyframes inFromRight {
+from { -webkit-transform: translateX(100%); }
+to { -webkit-transform: translateX(0); }
+}
+.push.in {
+-webkit-animation-name: inFromRight;
+}
+
+
+.in, .out {
+-webkit-animation-timing-function: ease-in-out;
+-webkit-animation-duration: 300ms;
+}
+*/

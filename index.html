@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>NYSL Web App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="shortcut icon" sizes="196x196" href="css/Images/nysl_icon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/datatables.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="hide-landscp">
+      <img src="css/Images/nysl_logo.png" alt="nysl_logo" class="w-50 mx-auto d-block py-2">
+    </div>
+    <nav>
+      <img src="css/Images/nysl_logo.png" alt="nysl_logo" class="show-landscp">
+      <ul class="nav nav-tabs nav-justified font-weight-bold ul-landscp" id="myTab">
+        <li class="nav-item" id="tab-home"><a href="#home" data-toggle="tab" id="link-home" class="nav-link active non-active-bkg"><i class="fas fa-home"></i></a></li>
+        <li class="nav-item" id="tab-schedule"><a href="#schedule" data-toggle="tab" id="link-schedule" class="nav-link non-active-bkg"><i class="far fa-calendar-alt"></i></a></li>
+        <li class="nav-item"><a href="#locations" data-toggle="tab" id="link-locations" class="nav-link non-active-bkg"><i class="fas fa-map-marker-alt"></i> </a></li>
+        <li class="nav-item"><a href="#stats" data-toggle="tab" id="link-stats" class="nav-link non-active-bkg"><i class="fas fa-futbol"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="tab-content" id="app">
+    <div class="tab-pane active" id="home">
+      <main class="bkg">
+        <div class="text-light text-center title">
+          <h3>General Information</h3>
+        </div>
+        <div>
+          <div class="card w-75 mx-auto text-center bg-danger font-weight-bold">
+          <p class="card-body">9/29: All games suspended due to weather conditions</p>
+            </div>
+            <div id="accordion" class="my-4 w-100 mx-auto">
+            <div class="card">
+                <a class="card-link text-light" data-toggle="collapse" href="#collapseOne">
+                  <div class="card-header card-bkg font-weight-bold text-center">
+                    Upcoming Events
+                  </div>
+                </a>
+              <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                <div class="card-body card-bg">
+                  <h5>August 4</h5>
+                  <p class="pl-4">NYSL Fundraiser</p>
+                  <h5>August 16</h5>
+                  <p class="pl-4">Season Kick-off: Meet the Teams</p>
+                  <h5>September 1</h5>
+                  <p class="pl-4"> First Game of the Season (Check Game Schedule for details)</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseTwo">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                   About Us
+                  </div>
+                </a>
+              <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body card-bg">
+                  <h3>Mission</h3>
+                  <p class="pl-2">To support young athletes living in Chicago's northside neighborhoods, who have an interest in learning and playing soccer, with opportunities to learn and practice skills related to the game of soccer, specifically those skills around team cooperation and good sportsmanship.</p>
+                  <h3>Vision</h3>
+                  <p class="pl-2">The Northside Youth Soccer League aspires to develop strong, well-rounded, and mindful athletes through the building of character, self-discipline, and leadership.</p>
+                  <h3>General Information</h3>
+                  <p class="pl-2">The Northside Youth Soccer League was established in 1996 to provide athletes residing in Chicago's northside neighborhoods an environment in which to learn and play soccer. To be a member of NYSL, you must be between the ages of 4 - 12 and reside in a Chicago northside neighborhood. NYSL is run by a small full-time staff, and relies on the generous volunteer time of parents and previous league members.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseThree">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  Contact Us
+                  </div>
+                </a>
+              <div id="collapseThree" class="collapse" data-parent="#accordion">
+                <div class="card-body card-bg">
+                  <p>Please email us at <a href="mailto:nysl@chisoccer.org">nysl@chisoccer.org</a></p>
+                  <p>We will reply to your email as soon as we can.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="tab-pane fade" id="schedule">
+      <div id="schSlide">
+       <div class="bkg sch current">
+        <div class="text-light text-center title">
+          <h3>Games Schedule</h3>
+        </div>
+        <div class="py-4">
+          <div id="accordion2" class="my-4 w-100 mx-auto">
+            <div class="card">
+                <a class="card-link text-light" data-toggle="collapse" href="#collapseOne2">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  September
+                  </div>
+                </a>
+              <div id="collapseOne2" class="collapse show" data-parent="#accordion2">
+               <div class="card-body card-bg">
+                 <div id="inside-accordion" class="w-100 mx-auto">
+                   <div class="card" v-for="(i, key) in sepSch">
+                       <a class="card-link text-light" data-toggle="collapse" :href="'#collapseInside'+key">
+                       <div class="card-header bg-success font-weight-bold text-center">
+                        {{i.date}} at {{i.time}}
+                        </div>
+                       </a> 
+                     <div :id="'collapseInside'+key" class="collapse" data-parent="#inside-accordion">
+                       <div class="card-body">
+                         <p><b>Teams:</b> {{i.team1}} and {{i.team2}}</p>
+                         <p><b>Location:</b> {{i.location}} <button type="button" :class="i.location + ' btn btn-info btn-sm'">See map</button></p>
+                         <p><b>Status:</b> {{i.status}} <button type="button" :id="key" :class="i.status + ' btn btn-info btn-sm'">See result</button></p>
+                         <button type="button" class="btn btn-info forum-btn" :id="key + 'forum'">Comment</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseTwo2">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  October
+                 </div>
+                </a>
+              <div id="collapseTwo2" class="collapse" data-parent="#accordion2">
+                <div class="card-body card-bg">
+                  <div id="inside-accordion-two" class="w-100 mx-auto">
+                   <div class="card" v-for="(i, key) in octSch">
+                       <a class="card-link text-light" data-toggle="collapse" :href="'#collapseInsideTwo'+key">
+                       <div class="card-header bg-success font-weight-bold text-center">
+                        {{i.date}} at {{i.time}}
+                        </div>
+                       </a>
+                     <div :id="'collapseInsideTwo'+key" class="collapse" data-parent="#inside-accordion-two">
+                       <div class="card-body">
+                         <p><b>Teams:</b> {{i.team1}} and {{i.team2}}</p>
+                         <p><b>Location:</b> {{i.location}} <button type="button" :class="i.location + ' btn btn-info btn-sm'"> See map</button></p>
+                         <p><b>Status:</b> {{i.status}} <button type="button" :id="key" :class="i.status + ' btn btn-info btn-sm'"> See result</button></p>
+                         <button type="button" class="btn btn-info forum-btn" :id="key + 'forum'">Comment</button>
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loc-map bkg hide-map" id="AJ-map">
+        <h3 class="text-light text-center title col-12">AJ Katzenmaier Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.6542135574186!2d-87.63123838455817!3d41.90029307922043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528741680375" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="loc-map bkg hide-map" id="Greenbay-map">
+        <h3 class="text-light text-center title col-12">Greenbay Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258285480745!2d-87.64002868489892!3d41.91380347921943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528741859504" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="loc-map bkg hide-map" id="Howard-map">
+        <h3 class="text-light text-center title col-12">Howard A Yeager Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.585683085617!2d-87.66511458489856!3d41.92326457921868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528741949442" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="loc-map bkg hide-map" id="Marjorie-map">
+        <h3 class="text-light text-center title col-12">Marjorie P Hart Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.291821595264!2d-87.64808498489835!3d41.929580279218186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528742022142" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="loc-map bkg hide-map" id="North-map">
+        <h3 class="text-light text-center title col-12">North Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3364882315836!2d-87.64835588489916!3d41.907124679219926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af13a8945%3A0xb6ad1ec2b6f379ba!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528742068942" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="loc-map bkg hide-map" id="South-map">
+        <h3 class="text-light text-center title col-12">South Elementary</h3>
+        <object class="mx-auto d-block" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.748020309144!2d-87.65355788489867!3d41.919775279218925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+EE.+UU.!5e0!3m2!1ses!2sar!4v1528742125526" width="300" height="250" style="border:0"></object>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+      </div>
+      <div class="game-detail bkg">
+        <h3 class="text-light text-center title">Game Details</h3>
+        <div class="card-body bg-success mx-auto w-75 mt-5">
+          <table class="table">
+            <thead class="text-center">
+              <tr v-for="(i, key) in sepSch" :class="'tr'+key">
+                <th colspan="5">{{key}}</th>
+              </tr>
+            </thead>
+            <tbody class="detail-table">
+              <tr v-for="(i, key) in sepSch" :class="'tr'+key">
+                <td>{{i.team1}}:</td>
+                <td>{{i.score1}}</td>
+                <td>-</td>
+                <td>{{i.team2}}:</td>
+                <td>{{i.score2}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="btn btn-success btn-lg mx-auto d-block my-4 back-sch2" type="button"><i class="fas fa-chevron-circle-left"></i> Back</button>
+       </div>
+       <div id="forum" class="bkg">
+         <h3 class="text-light text-center title">Forum</h3>
+         <section id="page-splash">
+          <div>
+          <button id="sign-in-button" class="btn btn-sm rounded btn-info mx-auto d-block my-1 mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign in with Google</button>
+          </div>
+         </section>
+         <button type="button" class="btn btn-success mx-auto d-block my-4" id="back-sch3"><i class="fas fa-chevron-circle-left"></i> Back</button>
+         <div class="p-1 bg-success forum-header mx-auto tab mdl-layout__header-row mdl-color--light-blue-600 clearfix">
+            <ul class="nav nav-pills font-weight-bold mdl-tab float-left">
+              <li id="menu-recent" class="nav-item mdl-layout__tab is-active non-act mdl-button mdl-js-button mdl-js-ripple-effect">
+               <a href="#" class="nav-link"><i class="material-icons">new_releases</i> Recent</a>
+              </li>
+              <li id="menu-my-posts" class="nav-item non-act mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                <a href="#" class="nav-link"><i class="material-icons">home</i> My posts</a>
+              </li>
+              <li id="menu-my-top-posts" class="nav-item non-act mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                <a href="#" class="nav-link"> <i class="material-icons">trending_up</i> My top posts</a>
+              </li>
+              <li class="nav-item mdl-button mdl-js-button mdl-button--fab mdl-color--amber-400 mdl-shadow--4dp mdl-js-ripple-effect" id="add">
+                <a href="#" class="nav-link"><button type="button" class="btn btn-sm btn-warning rounded-circle"><i class="material-icons">mode_edit</i></button></a> 
+              </li>
+            </ul>
+            <button id="sign-out-button" class="float-right btn btn-sm rounded btn-outline-dark mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i class="material-icons">account_circle</i> Sign out</button>
+         </div>
+         <main class="forum-body mx-auto p-2">
+
+            <!-- Show the add post form -->
+            <section class="mdl-grid content" id="add-post" style="display:none">
+              <div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+                  <!-- Card containing the inputs to add a new messages -->
+                  <div class="col-md-6 mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet
+                          mdl-cell--6-col-desktop">
+                    <div class="card-header border border-secondary text-light bg-success mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+                      <h2 class="mdl-card__title-text">New Post</h2>
+                    </div>
+                    <div class="card-body border border-secondary bg-light mdl-card__supporting-text mdl-color-text--grey-600">
+                      <form id="message-form" action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <input class="mdl-textfield__input" type="text" id="new-post-title">
+                          <label class="mdl-textfield__label" for="new-post-title">Post title...</label>
+                        </div>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                          <textarea class="mdl-textfield__input" rows="3" id="new-post-message"></textarea>
+                          <label class="mdl-textfield__label" for="new-post-message">Post message...</label>
+                        </div>
+                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                          Add post
+                        </button>
+                      </form>
+                    </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Show a list of recent posts -->
+            <section class="mdl-grid content" id="recent-posts-list" style="display:none">
+              <div class="card p-2 bg-light col-md-6 posts-container mdl-cell mdl-cell--12-col mdl-grid">
+              </div>
+            </section>
+
+            <!-- Show the list of user's posts -->
+            <section class="mdl-grid content" id="user-posts-list" style="display:none">
+              <div class="card p-2 bg-light col-md-6 posts-container mdl-cell mdl-cell--12-col mdl-grid">
+              </div>
+            </section>
+
+            <!-- Show the list of top user's posts -->
+            <section class="mdl-grid content" id="top-user-posts-list" style="display:none">
+              <div class="card p-2 bg-light col-md-6 posts-container mdl-cell mdl-cell--12-col mdl-grid">
+              </div>
+            </section>
+         </main>
+       </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="locations">
+      <div class="bkg">
+        <div class="text-light text-center title">
+          <h3>Games Locations</h3>
+        </div>
+        <div>
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1_-EhwM06gZsEh506w9l_FBjgWaxd_rZq" class="mx-auto d-block map"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="stats">
+      <div class="bkg">
+        <div class="text-light text-center title">
+          <h3>Stats</h3>
+        </div>
+        <div>
+            <div id="accordion3" class="my-4 w-100 mx-auto">
+                <div class="card">
+                    <a class="card-link text-light" data-toggle="collapse" href="#collapseOne3">
+                     <div class="card-header card-bkg font-weight-bold text-center">
+                      Results
+                      </div>
+                    </a>
+                  <div id="collapseOne3" class="collapse" data-parent="#accordion3">
+                    <div class="card-body card-bg row">
+                      <div class="card border border-light bg-success col-6" v-for="i in sepSch" v-if="i.status == 'end'">
+                        <p class="font-weight-bold">{{i.date}} at {{i.time}}</p>
+                        <table class="table">
+                         <tbody>
+                            <tr>
+                              <td>{{i.team1}}</td>
+                              <td>{{i.score1}}</td>
+                              <td>{{i.team2}}</td>
+                              <td>{{i.score2}}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                    <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseTwo3">
+                     <div class="card-header card-bkg font-weight-bold text-center">
+                      Positions
+                      </div>
+                    </a>
+                  <div id="collapseTwo3" class="collapse" data-parent="#accordion3">
+                    <div class="card-body card-bg">
+                      <table class="table table-responsive w-100 mx-auto text-center rock">
+                          <thead class="t-headers text-light">
+                            <tr>
+                              <th>No.</th>
+                              <th>Team</th>
+                              <th>PG</th>
+                              <th>W</th>
+                              <th>T</th>
+                              <th>L</th>
+                              <th>Pts.</th>
+                            </tr>
+                          </thead>
+                          <tbody class="striped">
+                            <tr v-for="i in stats.positions">
+                              <td>{{i.position}}</td>
+                              <td>{{i.team}}</td>
+                              <td>{{i.played_games}}</td>
+                              <td>{{i.won}}</td>
+                              <td>{{i.tied}}</td>
+                              <td>{{i.lost}}</td>
+                              <td class="pts">{{i.points}}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <h3 class="text-center">Teams Members</h3>
+            <div id="accordion4" class="my-4 w-100 mx-auto">
+            <div class="card">
+                <a class="card-link text-light" data-toggle="collapse" href="#collapseOne4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U1
+                  </div>
+                </a>
+              <div id="collapseOne4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                  <ul v-for="i in u1">
+                    <li>{{i.last_name}}, {{i.first_name}}</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseTwo4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U2
+                  </div>
+                </a>
+              <div id="collapseTwo4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseThree4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U3
+                  </div>
+                </a>
+              <div id="collapseThree4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseFour4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U4
+                  </div>
+                </a>
+              <div id="collapseFour4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseFive4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U5
+                  </div>
+                </a>
+              <div id="collapseFive4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                </div>
+              </div>
+            </div>
+            <div class="card">
+                <a class="collapsed card-link text-light" data-toggle="collapse" href="#collapseSix4">
+                 <div class="card-header card-bkg font-weight-bold text-center">
+                  U6
+                  </div>
+                </a>
+              <div id="collapseSix4" class="collapse" data-parent="#accordion4">
+                <div class="card-body card-bg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/__/firebase/5.0.0/firebase-app.js"></script>
+  <script src="/__/firebase/5.0.0/firebase-auth.js"></script>
+  <script src="/__/firebase/5.0.0/firebase-database.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/fh-3.1.4/datatables.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
